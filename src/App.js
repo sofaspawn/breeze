@@ -102,7 +102,7 @@ function App() {
         <button onClick={goUp}>↑</button>
         <button onClick={goDown}>↓</button>
       </form>
-      <p className='goof'>GDSC cannot keep getting away with high effort 'futuristic' frontends.</p>
+      <p className='goof'>GDSC cannot keep getting away with high effort 'modern' frontends.</p>
       <p className='goof'>here's high effort yet goofy 2000s frontend</p>
     </div>
   );

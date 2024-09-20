@@ -41,10 +41,18 @@ Breeze is an interactive, real-time web application. It provides users with a un
 - [ ] improve the frontend
   - [ ] give the retro look
   - [ ] leave easter eggs
-- [ ] Integrate frontend and backend
-  - [ ] Connect React app to Socket.io server
-  - [ ] Test real-time updates across multiple devices
-- [ ] Implement user interface and styling
-  - [ ] Design and create UI components (buttons, text inputs, etc.)
-  - [ ] Apply consistent styling across the app
-- [ ] Fix any bugs or issues discovered
+- [x] Integrate frontend and backend
+  - [x] Connect React app to Socket.io server
+  - [x] Test real-time updates across multiple devices
+- [x] Implement user interface and styling
+  - [x] Design and create UI components (buttons, text inputs, etc.)
+  - [x] Apply consistent styling across the app
+- [x] Fix any bugs or issues discovered
+
+---
+
+- [ ] ability to add photos
+- [ ] randomize the chat box appearance
+- [ ] retrofy the experience more
+- [ ] add goofy background for the lulz 2000s look
+- [ ] add mouse pointer

@@ -1,23 +1,56 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import io from 'socket.io-client';
+
+const socket = io('http://localhost:4000', {
+  withCredentials: true,
+  extraHeaders: {
+    "my-custom-header": "abcd"
+  }
+});
 
 function App() {
+  const [messages, setMessages] = useState([]);
+  const [input, setInput] = useState('');
+
+  //socket code------------------------------
+  useEffect(() => {
+    socket.on('chat message', (msg) => {
+      setMessages(prevMessages => [...prevMessages, msg]);
+    });
+
+    return () => {
+      socket.off('chat message');
+    };
+  }, []);
+
+  const sendMessage = (e) => {
+    e.preventDefault();
+    if (input) {
+      socket.emit('chat message', input);
+      setInput('');
+    }
+  };
+
+  const clearMessages = () => {
+    setMessages([]);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ul>
+        {messages.map((msg, index) => (
+          <li key={index}>{msg}</li>
+        ))}
+      </ul>
+      <form onSubmit={sendMessage}>
+        <input 
+          value={input} 
+          onChange={(e) => setInput(e.target.value)} 
+        />
+        <button type="submit">Send</button>
+        <button onClick={clearMessages}>clear</button>
+      </form>
     </div>
   );
 }

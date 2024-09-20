@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Breeze
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Overview
+Breeze is an interactive, real-time web application. It provides users with a unique way to explore and engage with their campus community.
 
-## Available Scripts
+## Key Features
+- **Got to think about this. But still going to be awesome.**
 
-In the project directory, you can run:
+## Technical Stack
+- Frontend: ReactJS
+- Backend: Socket.io and ExpressJS
+- Map Rendering: Custom pixel art, some ui library(tailwind probably...)
 
-### `npm start`
+## Hackathon Information
+- Event: DevJams'24
+- Date: 20 sept - 22 sept 2024
+- Team: sapphire
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Challenges:
+- The biggest design challenge was making the entire campus map into pixel art.
+- AI tools weren't able to help, and we were not about to change the idea!
+- Hence, we decided to recreate a small area of the campus instead of the entirety. 
+- The next design challenge was assets. Designing everything by hand was taking too much time, so we decided to use some freely available assets.
+- And we pivot....
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
+- its a web application now.
+- but still as good
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## TODO List
+- [x] Set up Reactproject structure
+  - [x] Initialize new React project
+  - [x] Set up necessary dependencies (React Native, Socket.io client)
+(got guys on this)
+- [ ] Design and create 2D pixel art for campus map
+  - [ ] Sketch out campus layout
+  - [ ] Create pixel art representations of buildings and areas
+- [ ] Set up backend server with Socket.io
+  - [ ] Create server structure
+  - [ ] Implement real-time message broadcasting
+- [ ] Integrate frontend and backend
+  - [ ] Connect React app to Socket.io server
+  - [ ] Test real-time updates across multiple devices
+- [ ] Implement user interface and styling
+  - [ ] Design and create UI components (buttons, text inputs, etc.)
+  - [ ] Apply consistent styling across the app
+- [ ] Fix any bugs or issues discovered

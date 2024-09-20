@@ -13,17 +13,19 @@ function App() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   const [shifted, setShifted] = useState([]);
+  const [nickname, setNickname] = useState('');
+  const [isNicknameEntered, setIsNicknameEntered] = useState(false);
 
   const goDown = () => {
-    if (messages.length > 0) {
-      const firstMessage = messages[0];
-      setMessages(prevMessages => prevMessages.slice(1));
+    if (messages.length > 1) {
+      const firstMessage = messages[1];
+      setMessages(prevMessages => prevMessages.slice(2));
       setShifted(prevShifted => [...prevShifted, firstMessage]);
     }
   };
 
   useEffect(() => {
-    if (messages.length > 8) {
+    if (messages.length > 9) {
       goDown();
     }
   }, [messages]);
@@ -41,9 +43,12 @@ function App() {
 
   const sendMessage = (e) => {
     e.preventDefault();
-    if (input) {
-      socket.emit('chat message', input);
+    if (isNicknameEntered) { // Ensure input is not empty and nickname is entered
+      socket.emit('chat message', `${nickname}: ${input}`);
       setInput('');
+    } else {
+      console.error('Message not sent: Input is empty or nickname not entered');
+      window.alert("Message not sent: Input is empty or nickname not entered");
     }
   };
 
@@ -53,11 +58,19 @@ function App() {
   };
 
   const goUp = () => {
-    if (shifted.length > 0) {
-      const lastShiftedMessage = shifted[shifted.length - 1];
-      setShifted(prevShifted => prevShifted.slice(0, -1));
-      setMessages(prevMessages => [lastShiftedMessage, ...prevMessages.slice(0, 7)]);
+    /*
+    if (shifted.length > 1) {
+      const lastShiftedMessage = shifted[shifted.length - 2];
+      setShifted(prevShifted => prevShifted.slice(1, -1));
+      setMessages(prevMessages => [lastShiftedMessage, ...prevMessages]);
     }
+    */
+    if (shifted.length > 0) { // Check if there are shifted messages
+      const lastShiftedMessage = shifted[shifted.length - 1]; // Get the last shifted message
+      setMessages(prevMessages => [lastShiftedMessage, ...prevMessages]); // Add it to the messages
+      setShifted(prevShifted => prevShifted.slice(0, -1)); // Remove the last shifted message
+    }
+
   };
 
   return (
@@ -72,7 +85,15 @@ function App() {
           value={input} 
           onChange={(e) => setInput(e.target.value)} 
         />
-        <button type="submit">Send</button>
+        <input 
+          value={nickname} 
+          onChange={(e) => {
+            setNickname(e.target.value);
+            setIsNicknameEntered(!!e.target.value);
+          }} 
+          placeholder="Enter your nickname"
+        />
+        <button type="submit" disabled={!isNicknameEntered}>Send</button>
         <button onClick={clearMessages}>clear</button>
         <button onClick={goUp}>↑</button>
         <button onClick={goDown}>↓</button>

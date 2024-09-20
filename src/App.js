@@ -12,6 +12,15 @@ const socket = io('http://localhost:4000', {
 function App() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
+  const [shifted, setShifted] = useState([]);
+
+  const goDown = () => {
+    setShifted(prevShifted => [...prevShifted, messages.shift()]);
+  }
+
+  if (messages.length > 8) {
+    goDown();
+  }
 
   //socket code------------------------------
   useEffect(() => {
@@ -36,6 +45,14 @@ function App() {
     setMessages([]);
   }
 
+  const goUp= () => {
+    let m = messages;
+    m.pop();
+    m.unshift(shifted[-1]);
+    setMessages(m);
+  }
+
+
   return (
     <div className="App">
       <ul>
@@ -50,6 +67,8 @@ function App() {
         />
         <button type="submit">Send</button>
         <button onClick={clearMessages}>clear</button>
+        <button onClick={goUp}>↑</button>
+        <button onClick={goDown}>↓</button>
       </form>
     </div>
   );

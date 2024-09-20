@@ -15,12 +15,18 @@ function App() {
   const [shifted, setShifted] = useState([]);
 
   const goDown = () => {
-    setShifted(prevShifted => [...prevShifted, messages.shift()]);
-  }
+    if (messages.length > 0) {
+      const firstMessage = messages[0];
+      setMessages(prevMessages => prevMessages.slice(1));
+      setShifted(prevShifted => [...prevShifted, firstMessage]);
+    }
+  };
 
-  if (messages.length > 8) {
-    goDown();
-  }
+  useEffect(() => {
+    if (messages.length > 8) {
+      goDown();
+    }
+  }, [messages]);
 
   //socket code------------------------------
   useEffect(() => {
@@ -43,15 +49,16 @@ function App() {
 
   const clearMessages = () => {
     setMessages([]);
-  }
+    setShifted([]);
+  };
 
-  const goUp= () => {
-    let m = messages;
-    m.pop();
-    m.unshift(shifted[-1]);
-    setMessages(m);
-  }
-
+  const goUp = () => {
+    if (shifted.length > 0) {
+      const lastShiftedMessage = shifted[shifted.length - 1];
+      setShifted(prevShifted => prevShifted.slice(0, -1));
+      setMessages(prevMessages => [lastShiftedMessage, ...prevMessages.slice(0, 7)]);
+    }
+  };
 
   return (
     <div className="App">

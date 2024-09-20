@@ -58,4 +58,4 @@ Breeze is an interactive, real-time web application. It provides users with a un
 - [ ] add mouse pointer
 - [ ] make the messages persistent
 - [ ] deploy the socket server on heroku(most prolly)
-- [ ] make the messages appear as bubbles
+- [ ] make the messages appear as bubbles(more as boxes)

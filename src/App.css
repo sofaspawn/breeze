@@ -40,6 +40,15 @@ body {
     pointer-events: none;
 }
 
+@keyframes blink {
+  0%, 100% {
+    opacity: 1; /* Fully visible */
+  }
+  50% {
+    opacity: 0; /* Fully transparent */
+  }
+}
+
 p{
   text-align: center;
   font-family: monospace;
@@ -51,8 +60,9 @@ p{
 .goof{
   text-align: center;
   font-family: 'yesteryear';
-  font-size: 20px;
+  font-size: 25px;
   padding: 0;
+  animation: blink 1s infinite;
 }
 
 h1 {

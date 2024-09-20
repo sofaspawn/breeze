@@ -76,7 +76,8 @@ function App() {
   return (
     <div className="App">
       <p>*THIS IS PROOF OF CONCEPT. NOT THE FINAL PRODUCT*</p>
-      <p>*THIS IS PROOF OF CONCEPT. NOT THE FINAL PRODUCT*</p>
+      <p>*WEBSOCKETS IMPLEMENTED.*</p>
+      <p>*THE CORNY 2000s UI IS INTENTIONAL🙏*</p>
       <h1>breeze</h1>
       <ul>
         {messages.map((msg, index) => (
@@ -101,8 +102,8 @@ function App() {
         <button onClick={goUp}>↑</button>
         <button onClick={goDown}>↓</button>
       </form>
-      <p className='goof'>gdsc cannot keep getting away with high effort 'futuristic' frontends.</p>
-      <p className='goof'>here's high effort goofy 2000s frontend</p>
+      <p className='goof'>GDSC cannot keep getting away with high effort 'futuristic' frontends.</p>
+      <p className='goof'>here's high effort yet goofy 2000s frontend</p>
     </div>
   );
 }

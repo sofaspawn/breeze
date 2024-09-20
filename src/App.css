@@ -18,13 +18,15 @@ body {
   font-family: 'Press Start 2P', cursive;
   background-color: #C0C0C0;
   box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3), inset -2px -2px 5px rgba(255, 255, 255, 0.5);
+  border: 2px solid #000000;
+  border-radius: 0px;
 }
 
 ul {
   list-style-type: none;
   padding: 10px;
   margin: 0;
-  height: 300px;
+  height: 50vh;
   overflow-y: auto;
   border: 2px solid #000;
   background-color: #FFFFFF;
@@ -40,6 +42,7 @@ li {
 
 form {
   display: flex;
+  flex-direction: column;
   gap: 10px;
 }
 
@@ -60,7 +63,23 @@ button {
   color: #000;
   border: 2px outset #808080;
   cursor: pointer;
+  width: 100%;
 }
+
+@media (max-width: 600px) {
+  .App {
+    padding: 10px; /* Reduce padding on smaller screens */
+  }
+
+  ul {
+    height: 40vh; /* Adjust height for smaller screens */
+  }
+
+  input, button {
+    font-size: 12px; /* Smaller font size for inputs and buttons */
+  }
+}
+
 
 button:hover {
   background-color: #D3D3D3;

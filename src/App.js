@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import io from 'socket.io-client';
 
-const socket = io('https://breeze-sooty.vercel.app', {
+const socket = io('http://localhost:4000', {
   withCredentials: true,
   extraHeaders: {
     "my-custom-header": "abcd"
@@ -76,7 +76,7 @@ function App() {
   return (
     <div className="App">
       <p>*THIS IS PROOF OF CONCEPT. NOT THE FINAL PRODUCT*</p>
-      <p>*PROOF THAT I CAN IMPLEMENT WEBSOCKETS*</p>
+      <p>*THIS IS PROOF OF CONCEPT. NOT THE FINAL PRODUCT*</p>
       <h1>breeze</h1>
       <ul>
         {messages.map((msg, index) => (

@@ -35,9 +35,12 @@ Breeze is an interactive, real-time web application. It provides users with a un
 - [ ] Design and create 2D pixel art for campus map
   - [ ] Sketch out campus layout
   - [ ] Create pixel art representations of buildings and areas
-- [ ] Set up backend server with Socket.io
-  - [ ] Create server structure
-  - [ ] Implement real-time message broadcasting
+- [x] Set up backend server with Socket.io
+  - [x] Create server structure
+  - [x] Implement real-time message broadcasting
+- [ ] improve the frontend
+  - [ ] give the retro look
+  - [ ] leave easter eggs
 - [ ] Integrate frontend and backend
   - [ ] Connect React app to Socket.io server
   - [ ] Test real-time updates across multiple devices

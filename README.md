@@ -31,7 +31,7 @@ Breeze is an interactive, real-time web application. It provides users with a un
 - [x] Set up Reactproject structure
   - [x] Initialize new React project
   - [x] Set up necessary dependencies (React Native, Socket.io client)
-(got guys on this)
+- (got guys on this)
 - [ ] Design and create 2D pixel art for campus map
   - [ ] Sketch out campus layout
   - [ ] Create pixel art representations of buildings and areas

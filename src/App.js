@@ -16,16 +16,25 @@ function App() {
   const [shifted, setShifted] = useState([]);
   const [nickname, setNickname] = useState('');
   const [isNicknameEntered, setIsNicknameEntered] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  var currentdate = new Date();
+  var datetime = "\n" + currentdate.getDate() + "/"
+    + (currentdate.getMonth() + 1) + "/"
+    + currentdate.getFullYear() + " @ "
+    + currentdate.getHours() + ":"
+    + currentdate.getMinutes() + ":"
+    + currentdate.getSeconds();
 
   //-----------------------------
   const handleSendMessage = (e) => {
     e.preventDefault();
-    if (!input) return; // Prevent sending empty messages
+    if (!input || !nickname) return; // Prevent sending empty messages
 
     const randomX = Math.floor(Math.random() * (window.innerWidth - 200)); // Random x position
     const randomY = Math.floor(100 + Math.random() * (window.innerHeight - 200)); // Random y position
 
-    socket.emit('chat message', { text: `${nickname}: ${input}`, x: randomX, y: randomY });
+    socket.emit('chat message', { datetime: `${datetime}`, nickname: `${nickname}`, message: `${input}`, x: randomX, y: randomY });
     setMessages([...messages, { text: input, x: randomX, y: randomY }]);
     setInput('');
   };
@@ -39,8 +48,12 @@ function App() {
     }
   };
 
+  const toggleModal = () => {
+    setIsOpen(!isOpen);
+  }
+
   useEffect(() => {
-    if (messages.length > 9) {
+    if (messages.length >= 25) {
       goDown();
     }
   }, [messages]);
@@ -73,30 +86,37 @@ function App() {
     setShifted([]);
   };
 
-  var currentdate = new Date();
-  var datetime = "\n" + currentdate.getDate() + "/"
-    + (currentdate.getMonth() + 1) + "/"
-    + currentdate.getFullYear() + " @ "
-    + currentdate.getHours() + ":"
-    + currentdate.getMinutes() + ":"
-    + currentdate.getSeconds();
-
 
   return (
     <div className="chat-container">
       <p>*THE CORNY 2000s UI IS INTENTIONAL*</p>
       <h1>breeze</h1>
-      <button className='clunky-button'>ME</button>
+      <button className='clunky-button' onClick={toggleModal}>ME</button>
+
+      {isOpen && (
+        <div className="modal-overlay">
+          <div className="modal">
+            <p><a href='https://github.com/sofaspawn'>sofaspawn</a></p>
+            <p>i don't do webdev, first time doing frontend</p>
+            <p>But I do code in C, Rust and Go</p>
+            <p>currently working on <a href='https://github.com/sofaspawn/srchngin'>srchngin</a></p>
+            <p>proud of: <a href='https://github.com/k1ut3h/png'>png</a>(alt account)</p>
+            <p>(CRINGE ALERT)blog: <a href='https://sofaspirit.bearblog.dev'>sofaspirit</a></p>
+            <button onClick={toggleModal}>Close</button>
+          </div>
+        </div>
+      )}
+
       <div className="messages">
           {messages.map((msg, index) => (
             <div key={index} className="chat-box" style={{ position: 'absolute', left: msg.x, top: msg.y }}>
               <div className="chat-header">
                 <div>
-                  {msg.text.slice(0, msg.text.indexOf(":")+1).trim()}
-                  {datetime}
+                  {msg.nickname}
+                  {msg.datetime}
                 </div>
               </div>
-              {msg.text.slice(msg.text.indexOf(":")+1).trim()}
+              {msg.message}
             </div>
         ))}
       </div>

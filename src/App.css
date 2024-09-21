@@ -19,6 +19,20 @@ body {
   cursor: url('/public/pngwing.com.png'), auto;
 }
 
+.close{
+  display: inline-block; /* Allow padding and margins */
+  padding: 8px 12px; /* Small padding */
+  font-size: 8px; /* Small font size */
+  background-color: #b9b7ae; /* Bright retro color */
+  border: 3px solid #000; /* Thick border for a clunky look */
+  border-radius: 0; /* Sharp corners */
+  color: #000; /* Text color */
+  transition: all 0.1s ease; /* Smooth transition for hover effects */
+  width: auto;
+  margin: 0 auto;
+  display: block;
+}
+
 .clunky-button {
   display: inline-block; /* Allow padding and margins */
   padding: 8px 12px; /* Small padding */
@@ -237,6 +251,28 @@ button[type="submit"]:hover {
   color: #fff; /* White color for buttons */
   cursor: pointer; /* Pointer cursor */
   font-weight: bold; /* Bold text for visibility */
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: white;
+  padding: 20px;
+  border: 15px solid #00807F;
+  border-radius: 0px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  max-width: 800px;
+  width: 90%;
 }
 
 .chat-header .btn:hover {

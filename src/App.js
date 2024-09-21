@@ -73,16 +73,6 @@ function App() {
     setShifted([]);
   };
 
-  const goUp = () => {
-    if (shifted.length > 0) { // Check if there are shifted messages
-      const lastShiftedMessage = shifted[shifted.length - 1]; // Get the last shifted message
-      setMessages(prevMessages => [lastShiftedMessage, ...prevMessages]); // Add it to the messages
-      setShifted(prevShifted => prevShifted.slice(0, -1)); // Remove the last shifted message
-    }
-  };
-
-
-
   var currentdate = new Date();
   var datetime = "\n" + currentdate.getDate() + "/"
     + (currentdate.getMonth() + 1) + "/"
@@ -96,16 +86,17 @@ function App() {
     <div className="chat-container">
       <p>*THE CORNY 2000s UI IS INTENTIONAL*</p>
       <h1>breeze</h1>
+      <button className='clunky-button'>ME</button>
       <div className="messages">
           {messages.map((msg, index) => (
             <div key={index} className="chat-box" style={{ position: 'absolute', left: msg.x, top: msg.y }}>
               <div className="chat-header">
                 <div>
-                  message
+                  {msg.text.slice(0, msg.text.indexOf(":")+1).trim()}
                   {datetime}
                 </div>
               </div>
-              {msg.text}
+              {msg.text.slice(msg.text.indexOf(":")+1).trim()}
             </div>
         ))}
       </div>

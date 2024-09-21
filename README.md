@@ -58,10 +58,10 @@ Breeze is an interactive, real-time web application. It provides users with a un
 ---
 
 - [ ] ability to add photos
-- [ ] randomize the chat box appearance
-- [ ] retrofy the experience more
+- [x] randomize the chat box appearance
+- [x] retrofy the experience more
 - [x] add goofy background for the lulz 2000s look
 - [ ] add mouse pointer
 - [ ] make the messages persistent
 - [ ] deploy the socket server on render (i swore it ran perfectly before)
-- [ ] make the messages appear as bubbles(more as boxes)
+- [x] make the messages appear as bubbles(more as boxes)

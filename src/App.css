@@ -10,12 +10,43 @@
 
 body {
   background-color: #F2F0EF;
-  background-image: url('/public/watercolor-paper-texture.jpg');
+  background-image: url('/public/Bliss.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   margin: 0;
   padding: 0;
   overflow: hidden;
   cursor: url('/public/pngwing.com.png'), auto;
 }
+
+.clunky-button {
+  display: inline-block; /* Allow padding and margins */
+  padding: 8px 12px; /* Small padding */
+  font-size: 10px; /* Small font size */
+  background-color: #b9b7ae; /* Bright retro color */
+  border: 3px solid #000; /* Thick border for a clunky look */
+  border-radius: 0; /* Sharp corners */
+  color: #000; /* Text color */
+  font-family: 'Press Start 2P', cursive; /* Retro font */
+  cursor: pointer; /* Pointer cursor on hover */
+  box-shadow: 2px 2px 0 #666; /* Shadow for depth */
+  transition: all 0.1s ease; /* Smooth transition for hover effects */
+  width: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+.clunky-button:hover {
+  background-color: #c1bfb7; /* Darker yellow on hover */
+  box-shadow: 1px 1px 0 #444; /* Reduce shadow on hover */
+  transform: translateY(1px); /* Slightly push down on hover */
+}
+
+.clunky-button:active {
+  box-shadow: inset 1px 1px 0 #444; /* Inner shadow for pressed effect */
+  transform: translateY(2px); /* Move down on click */
+}
+
 
 .App {
   max-width: 800px;

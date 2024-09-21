@@ -6,7 +6,7 @@ Breeze is an interactive, real-time web application. It provides users with a un
 ## Key Features
 - **2000s design elements**
 - **public chat WITHOUT end-to-end encryption**
-- **like early boards but without all the good stuff like actual content**
+- **like discussion boards but without all the good stuff like actual content**
 - **a place for goofs like me to hangout and make fun of authority together**
 - **easter eggs**
 

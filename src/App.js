@@ -81,21 +81,28 @@ function App() {
     }
   };
 
+
+
+  var currentdate = new Date();
+  var datetime = "\n" + currentdate.getDate() + "/"
+    + (currentdate.getMonth() + 1) + "/"
+    + currentdate.getFullYear() + " @ "
+    + currentdate.getHours() + ":"
+    + currentdate.getMinutes() + ":"
+    + currentdate.getSeconds();
+
+
   return (
     <div className="chat-container">
-      <p>*THIS IS PROOF OF CONCEPT. NOT THE FINAL PRODUCT*</p>
-      <p>*WEBSOCKETS IMPLEMENTED.*</p>
-      <p>*THE CORNY 2000s UI IS INTENTIONAL🙏*</p>
+      <p>*THE CORNY 2000s UI IS INTENTIONAL*</p>
       <h1>breeze</h1>
       <div className="messages">
           {messages.map((msg, index) => (
             <div key={index} className="chat-box" style={{ position: 'absolute', left: msg.x, top: msg.y }}>
               <div className="chat-header">
-                <div>Chat</div>
                 <div>
-                  <button className="btn btn-minimize">_</button>
-                  <button className="btn btn-maximize">[]</button>
-                  <button className="btn btn-close">X</button>
+                  message
+                  {datetime}
                 </div>
               </div>
               {msg.text}

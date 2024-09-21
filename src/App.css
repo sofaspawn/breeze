@@ -10,10 +10,11 @@
 
 body {
   background-color: #F2F0EF;
-  background-image: url('/public/bg.jpg');
+  background-image: url('/public/watercolor-paper-texture.jpg');
   margin: 0;
   padding: 0;
   overflow: hidden;
+  cursor: url('/public/pngwing.com.png'), auto;
 }
 
 .App {
@@ -172,12 +173,12 @@ button[type="submit"]:hover {
 
 .chat-box {
   background-color: #f0f0f0; /* Light gray background */
-  border: 2px solid #00807F; /* Thin black border */
+  border: 5px solid #00807F; /* Thin black border */
   border-radius: 0px; /* Slightly rounded corners */
   padding: 4px; /* Space inside the box */
   margin: 0px; /* Optional margin */
   width: auto; /* Adjust width if needed */
-  max-width: 150px; /* Limit width to avoid overflow */
+  max-width: 550px; /* Limit width to avoid overflow */
   font-family: 'Press Start 2P', cursive; /* Retro font */
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); /* Shadow for depth */
   text-shadow: 1px 1px 0px #fff; /* White text shadow for a 3D effect */
@@ -246,6 +247,7 @@ button[type="submit"]:hover {
   max-width: 600px; /* Set a max width */
   margin: 0 auto; /* Center the form horizontally */
   background-color: rgba(255, 255, 255, 0.8); /* Optional background */
+  border: 5px solid #00807F;
   padding: 10px; /* Spacing */
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow */
   z-index: 1000; /* Ensure it’s above other content */

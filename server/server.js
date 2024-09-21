@@ -9,7 +9,8 @@ app.use(cors());
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "https://breeze-vo0j.onrender.com",
+    //origin: "https://breeze-vo0j.onrender.com",
+    origin: "http://localhost:4000",
     methods: ["GET", "POST"],
     allowedHeaders: ["my-custom-header"],
     credentials: true }

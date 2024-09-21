@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import io from 'socket.io-client';
 
-const socket = io('https://breeze-vo0j.onrender.com', {
+//const socket = io('https://breeze-vo0j.onrender.com', {
+const socket = io('http://localhost:4000', {
   withCredentials: true,
   extraHeaders: {
     "my-custom-header": "abcd"

@@ -30,6 +30,8 @@ Breeze is an interactive, real-time web application. It provides users with a un
 ---
 - its a web application now.
 - but still as good
+- i'm constantly thinking of salvaging the project with code because the design team pretty much failed
+- I think I will, if nothing else, maybe YOU guys can appreciate the quick thinking + godlike development speed on my part
 
 ## TODO List
 - [x] Set up Reactproject structure
@@ -61,5 +63,5 @@ Breeze is an interactive, real-time web application. It provides users with a un
 - [x] add goofy background for the lulz 2000s look
 - [ ] add mouse pointer
 - [ ] make the messages persistent
-- [ ] deploy the socket server on heroku(most prolly)
+- [ ] deploy the socket server on render (i swore it ran perfectly before)
 - [ ] make the messages appear as bubbles(more as boxes)

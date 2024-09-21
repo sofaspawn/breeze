@@ -5,6 +5,7 @@
 ## Project Overview
 Breeze is an interactive, real-time web application. It provides users with a unique way to explore and engage with their campus community.
 
+
 ## Key Features
 - **2000s design elements**
 - **public chat WITHOUT end-to-end encryption**

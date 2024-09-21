@@ -17,6 +17,20 @@ function App() {
   const [nickname, setNickname] = useState('');
   const [isNicknameEntered, setIsNicknameEntered] = useState(false);
 
+  //-----------------------------
+  const handleSendMessage = (e) => {
+    e.preventDefault();
+    if (!input) return; // Prevent sending empty messages
+
+    const randomX = Math.floor(Math.random() * (window.innerWidth - 200)); // Random x position
+    const randomY = Math.floor(100 + Math.random() * (window.innerHeight - 200)); // Random y position
+
+    socket.emit('chat message', { text: `${nickname}: ${input}`, x: randomX, y: randomY });
+    setMessages([...messages, { text: input, x: randomX, y: randomY }]);
+    setInput('');
+  };
+  //-------------------------------
+
   const goDown = () => {
     if (messages.length > 1) {
       const firstMessage = messages[1];
@@ -44,8 +58,9 @@ function App() {
 
   const sendMessage = (e) => {
     e.preventDefault();
-    if (input.trim() && isNicknameEntered) { // Ensure input is not empty and nickname is entered
-      socket.emit('chat message', `${nickname}: ${input}`);
+    if (isNicknameEntered) { // Ensure input is not empty and nickname is entered
+      const randomX = Math.floor(Math.random() * (window.innerWidth - 200)); // Random x position
+      const randomY = Math.floor(Math.random() * (window.innerHeight - 100)); // Random y position
       setInput('');
     } else {
       console.error('Message not sent: Input is empty or nickname not entered');
@@ -59,22 +74,48 @@ function App() {
   };
 
   const goUp = () => {
-    /*
-    if (shifted.length > 1) {
-      const lastShiftedMessage = shifted[shifted.length - 2];
-      setShifted(prevShifted => prevShifted.slice(1, -1));
-      setMessages(prevMessages => [lastShiftedMessage, ...prevMessages]);
-    }
-    */
     if (shifted.length > 0) { // Check if there are shifted messages
       const lastShiftedMessage = shifted[shifted.length - 1]; // Get the last shifted message
       setMessages(prevMessages => [lastShiftedMessage, ...prevMessages]); // Add it to the messages
       setShifted(prevShifted => prevShifted.slice(0, -1)); // Remove the last shifted message
     }
-
   };
 
   return (
+    <div className="chat-container">
+      <p>*THIS IS PROOF OF CONCEPT. NOT THE FINAL PRODUCT*</p>
+      <p>*WEBSOCKETS IMPLEMENTED.*</p>
+      <p>*THE CORNY 2000s UI IS INTENTIONAL🙏*</p>
+      <h1>breeze</h1>
+      <div className="messages">
+          {messages.map((msg, index) => (
+            <div key={index} className="chat-box" style={{ position: 'absolute', left: msg.x, top: msg.y }}>
+              {msg.text}
+            </div>
+        ))}
+      </div>
+        <form className="bottom-elements" onSubmit={handleSendMessage}>
+        <input
+          type="text"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder="Type a message"
+          className="input-box"
+        />
+        <input
+          type="text"
+          value={nickname}
+          onChange={(e) => setNickname(e.target.value)}
+          placeholder="Enter your nickname"
+          className="input-box"
+        />
+        <button type='submit' className="send-button">Send</button>
+        <button type='button' onClick={clearMessages} className="clear-button">Clear</button>
+        </form>
+    </div>
+  );
+
+    {/*}
     <div className="App">
       <p>*THIS IS PROOF OF CONCEPT. NOT THE FINAL PRODUCT*</p>
       <p>*WEBSOCKETS IMPLEMENTED.*</p>
@@ -106,7 +147,7 @@ function App() {
       <p className='goof'>GDSC cannot keep getting away with high effort 'modern' frontends.</p>
       <p className='goof'>here's high effort yet goofy 2000s frontend</p>
     </div>
-  );
+    {*/}
 }
 
 export default App;

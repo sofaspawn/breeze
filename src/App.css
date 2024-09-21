@@ -5,12 +5,15 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  /*box-sizing: border-box;*/
 }
 
 body {
   background-color: #f0f0f0;
   background-image: url('/public/stars.gif');
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
 .App {
@@ -55,6 +58,7 @@ p{
   font-size: 20px;
   font-weight: bolder;
   padding: 0;
+  color: #ffffff;
 }
 
 .goof{
@@ -148,4 +152,63 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
   background-color: #006666;
+}
+
+.chat-container {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+
+/*
+.messages {
+  position: absolute;
+  max-width: 200px; /* Adjust as needed */
+  /*
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+}
+*/
+
+.chat-box {
+  background-color: #f0f0f0; /* Light gray background for a retro feel */
+  border: 5px solid #000; /* Thick black border */
+  border-radius: 0; /* Sharp corners */
+  padding: 10px; /* Space inside the box */
+  margin: 5px; /* Optional margin */
+  width: auto; /* Adjust width if needed */
+  max-width: 150px; /* Limit width to avoid overflow */
+  font-family: 'Press Start 2P', cursive; /* Retro font */
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.5); /* Slight shadow for depth */
+  text-shadow: 1px 1px 0px #fff; /* White text shadow for a 3D effect */
+  color: #000; /* Black text color */
+  position: relative; /* To allow for positioning adjustments if needed */
+  animation: pop-in 0.3s ease; /* Optional pop-in animation */
+}
+
+@keyframes pop-in {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.bottom-elements{
+  display: flex; /* Use flexbox for easy alignment */
+  justify-content: center; /* Center children horizontally */
+  position: fixed; /* Fixed to the viewport */
+  bottom: 0; /* Stick to the bottom */
+  left: 0; /* Align to the left */
+  right: 0; /* Align to the right */
+  max-width: 600px; /* Set a max width */
+  margin: 0 auto; /* Center the form horizontally */
+  background-color: rgba(255, 255, 255, 0.8); /* Optional background */
+  padding: 10px; /* Spacing */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow */
+  z-index: 1000; /* Ensure it’s above other content */
 }

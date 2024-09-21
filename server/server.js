@@ -16,14 +16,14 @@ const io = new Server(server, {
 });
 
 io.on('connection', (socket) => {
-  console.log('New client connected');
+  //console.log('New client connected');
 
   socket.on('chat message', (msg) => {
     io.emit('chat message', msg);
   });
 
   socket.on('disconnect', () => {
-    console.log('Client disconnected');
+    //console.log('Client disconnected');
   });
 });
 

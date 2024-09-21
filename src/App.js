@@ -43,7 +43,7 @@ function App() {
 
   const sendMessage = (e) => {
     e.preventDefault();
-    if (isNicknameEntered) { // Ensure input is not empty and nickname is entered
+    if (input.trim() && isNicknameEntered) { // Ensure input is not empty and nickname is entered
       socket.emit('chat message', `${nickname}: ${input}`);
       setInput('');
     } else {

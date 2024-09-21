@@ -1,5 +1,7 @@
 # Breeze
 
+-[](./breeze.png)
+
 ## Project Overview
 Breeze is an interactive, real-time web application. It provides users with a unique way to explore and engage with their campus community.
 

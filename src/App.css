@@ -9,8 +9,8 @@
 }
 
 body {
-  background-color: #f0f0f0;
-  background-image: url('/public/stars.gif');
+  background-color: #F2F0EF;
+  background-image: url('/public/bg.jpg');
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -58,7 +58,6 @@ p{
   font-size: 20px;
   font-weight: bolder;
   padding: 0;
-  color: #ffffff;
 }
 
 .goof{
@@ -73,7 +72,7 @@ h1 {
   color: #f508ae;
   text-align: center;
   margin-bottom: 10px;
-  font-size: 70px;
+  font-size: 100px;
   font-family: "Yesteryear", cursive;
   padding: 0;
 }
@@ -172,19 +171,57 @@ button[type="submit"]:hover {
 */
 
 .chat-box {
-  background-color: #f0f0f0; /* Light gray background for a retro feel */
-  border: 5px solid #000; /* Thick black border */
-  border-radius: 0; /* Sharp corners */
-  padding: 10px; /* Space inside the box */
-  margin: 5px; /* Optional margin */
+  background-color: #f0f0f0; /* Light gray background */
+  border: 2px solid #00807F; /* Thin black border */
+  border-radius: 0px; /* Slightly rounded corners */
+  padding: 4px; /* Space inside the box */
+  margin: 0px; /* Optional margin */
   width: auto; /* Adjust width if needed */
   max-width: 150px; /* Limit width to avoid overflow */
   font-family: 'Press Start 2P', cursive; /* Retro font */
-  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.5); /* Slight shadow for depth */
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); /* Shadow for depth */
   text-shadow: 1px 1px 0px #fff; /* White text shadow for a 3D effect */
   color: #000; /* Black text color */
-  position: relative; /* To allow for positioning adjustments if needed */
+  position: relative; /* To allow for positioning adjustments */
   animation: pop-in 0.3s ease; /* Optional pop-in animation */
+}
+
+.chat-header {
+  display: flex; /* Flexbox for header layout */
+  /*justify-content: space-between; /* Space between buttons */
+  align-items: center; /* Center buttons vertically */
+  background-color: #0078d4; /* Windows-like blue header */
+  color: #fff; /* White text */
+  padding: 0; /* Spacing */
+  border-top-left-radius: 0px; /* Rounded corners */
+  border-top-right-radius: 0px; /* Rounded corners */
+}
+
+.chat-header .btn {
+  width: 20px; /* Button width */
+  height: 20px; /* Button height */
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: #fff; /* White color for buttons */
+  cursor: pointer; /* Pointer cursor */
+  font-weight: bold; /* Bold text for visibility */
+}
+
+.chat-header .btn:hover {
+  opacity: 0.8; /* Slightly darker on hover */
+}
+
+/* Optional styles for the buttons */
+.btn-close {
+  background-color: #d50000; /* Red for close button */
+}
+
+.btn-minimize {
+  background-color: #f6a600; /* Yellow for minimize button */
+}
+
+.btn-maximize {
+  background-color: #4caf50; /* Green for maximize button */
 }
 
 @keyframes pop-in {
@@ -197,6 +234,7 @@ button[type="submit"]:hover {
     opacity: 1;
   }
 }
+
 
 .bottom-elements{
   display: flex; /* Use flexbox for easy alignment */

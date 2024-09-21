@@ -90,6 +90,14 @@ function App() {
       <div className="messages">
           {messages.map((msg, index) => (
             <div key={index} className="chat-box" style={{ position: 'absolute', left: msg.x, top: msg.y }}>
+              <div className="chat-header">
+                <div>Chat</div>
+                <div>
+                  <button className="btn btn-minimize">_</button>
+                  <button className="btn btn-maximize">[]</button>
+                  <button className="btn btn-close">X</button>
+                </div>
+              </div>
               {msg.text}
             </div>
         ))}

@@ -4,7 +4,11 @@
 Breeze is an interactive, real-time web application. It provides users with a unique way to explore and engage with their campus community.
 
 ## Key Features
-- **Got to think about this. But still going to be awesome.**
+- **2000s design elements**
+- **public chat WITHOUT end-to-end encryption**
+- **like early boards but without all the good stuff like actual content**
+- **a place for goofs like me to hangout and make fun of authority together**
+- **easter eggs**
 
 ## Technical Stack
 - Frontend: ReactJS
